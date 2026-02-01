@@ -1,5 +1,9 @@
-import { SignIn } from '@clerk/nextjs'
+import { SignIn , useUser } from '@clerk/nextjs'
 
 export default function Page() {
-  return <SignIn />
+  const { isSignedIn } = useUser()
+  if (!isSignedIn) {
+    return <SignIn/>
+  }
+  return null
 }
