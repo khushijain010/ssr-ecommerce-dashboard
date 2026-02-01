@@ -38,9 +38,9 @@ export default function AnalyticsPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <KpiCard title="Total Revenue" value="$36,800" />
+        <KpiCard title="Total Revenue" value=" ₹36,800" />
         <KpiCard title="Total Orders" value="1,134" />
-        <KpiCard title="Avg Order Value" value="$32.45" />
+        <KpiCard title="Avg Order Value" value=" ₹32.45" />
       </div>
 
       {/* Revenue Chart */}
