@@ -27,7 +27,7 @@ export default async function DashboardLayout({
   })
 
   if (!store) {
-    redirect('/sign-in')
+    return null
   }
 
   return (
