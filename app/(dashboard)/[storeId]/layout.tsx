@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 import { auth } from '@clerk/nextjs'
+import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import Navbar from '@/components/navbar'
@@ -27,8 +28,18 @@ export default async function DashboardLayout({
   })
 
   if (!store) {
-    return null
+  const headersList = headers()
+  const pathname = headersList.get('x-pathname')
+
+  // redirect ONLY if user is already inside dashboard route
+  if (pathname?.startsWith(`/${params.storeId}`)) {
+    redirect('/')
   }
+
+  // otherwise, do nothing (let / handle store creation)
+  return null
+}
+
 
   return (
     <div>
